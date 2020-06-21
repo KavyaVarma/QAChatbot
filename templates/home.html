@@ -1,0 +1,37 @@
+<html>
+<head>
+	<style>
+	*{
+		font-family:"palatino";
+	}
+	body{
+		font-size:20px;
+	}
+	.rowhead {
+		padding:10px;
+		text-align:left;
+	}
+	.answers {
+		padding:10px;
+		text-align:left;
+	}
+	</style>
+</head>
+   <body style="text-align:center">
+      <form action = "http://localhost:5000/result" method = "POST">
+         <h5>Document : </h5>  <textarea rows="10" cols="100" name ="Document" id="cont">
+</textarea>
+         <h5>Question : </h5> <textarea rows="3" cols="100"  name = "Question" id="ques"/></textarea>
+         <b><p><input type = "submit" value = "Predict the Answer"/></p></b>
+      </form>
+      <h5 style="display:inline;"> Note : </h5>The Document length must be leser than 500 words and the question length must be lesser than 36 words. If its greater,then the rest of the words are ignored for LSTM Model but it will be considered for DR Model.
+      <table border = 0 id="res">
+         {% for key, value in result.items() %}
+            <tr>
+               <h5 class="rowhead"> {{ key }} : </h5>
+               <p class="answers"> {{ value }} </p>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>

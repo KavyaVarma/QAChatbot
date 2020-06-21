@@ -1,0 +1,20 @@
+python 3 required
+keras version 2.2.4 is required
+in order to run the UI, flask version 0.12.2 is needed
+
+Installation needed to run the UI(flask and jinja)
+pip install -r requirements.txt
+
+Also run "python -m spacy download en" with superuser privileges in order to use the anaphora resolution component
+
+To use the UI:
+Run "python app.py" in Terminal / Command Prompt, then open localhost:5000 in a Web browser
+
+If the UI does not work , you could try the basic terminal version of the same. To do so :
+
+You could provide custom input :
+-write the context/paragraph into testing_doc.txt 
+-and then run "python basic.py" and enter 1
+
+Or you could test it on the existing test cases present in "tests.csv" :
+run "python basic.py" and enter 0
